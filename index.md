@@ -15,15 +15,15 @@ I worked as the sole programmer and in-engine developer during “Escape the Dee
 ---
 [Menticide - 1st place @ Clark IGDA December 2023 Game Jam](https://team-edgecase.itch.io/menticide)
 <img src="images/Ment.png?raw=true"/>
-
+I worked as the sole programmer and in-engine developer during “Menticide’s” development.
 ---
 [Tricks-n-Treats - 1st place @ Clark IGDA Halloween 2023 Game Jam](https://team-edgecase.itch.io/tricks-n-treats)
 <img src="images/tnt.png?raw=true"/>
-
+I worked on the weapon and enemy navigation systems during “Tricks-n-Treats” development.
 ---
 [Spirit Farm - 1st place @ Clark IGDA Harvest 2023 Game Jam](https://team-edgecase.itch.io/spirit-farm)
 <img src="images/sf.png?raw=true"/>
-
+I developed the spawning and game state management systems during the course of “Spirit Farm’s” development 
 ---
 
 ### Graphics Programming
