@@ -32,7 +32,10 @@
 <img src="images/abgs.gif?raw=true"/>
 
 ---
-- [Project 2 Title](http://example.com/)
+[Non-Linear dynamical System]
+<img src="images/agent.gif?raw=true"/>
+
+---
 - [Project 3 Title](http://example.com/)
 - [Project 4 Title](http://example.com/)
 - [Project 5 Title](http://example.com/)
