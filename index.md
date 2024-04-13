@@ -7,11 +7,11 @@
 
 [Roof Access - 1st Place @ Clark IGDA Febuary 2024 Game Jam](https://team-edgecase.itch.io/roof-access)
 <img src="images/ra.png?raw=true"/>
-
+I built the systems responsible for most of “Roof Access’s” core functionality such as its: weapons, movement, enemy AI, sound effects/feed back, VFX, collectibles, UI, and data management. I also composed its main theme and designed all of the particle systems. 
 ---
 [Escape The Deep - 1st place @ Clark IGDA January 2024 Game Jam](https://team-edgecase.itch.io/escape-the-deep)
 <img src="images/etd.png?raw=true"/>
-
+I worked as the sole programmer and in-engine developer during “Escape the Deep’s” development.
 ---
 [Menticide - 1st place @ Clark IGDA December 2023 Game Jam](https://team-edgecase.itch.io/menticide)
 <img src="images/Ment.png?raw=true"/>
