@@ -23,7 +23,7 @@
 ---
 [Spirit Farm - 1st place @ Clark IGDA Harvest 2023 Game Jam](https://team-edgecase.itch.io/spirit-farm)
 <img src="images/sf.png?raw=true"/>
-#### I developed the spawning and game state management systems during the course of “Spirit Farm’s” development 
+#### I created the spawning and game state management systems during the course of “Spirit Farm’s” development 
 ---
 
 ### Graphics Programming
