@@ -3,7 +3,7 @@
 ---
 
 ### Game Jam Projects
-#### My teammates and I won every Clark Univesity game jam in the 2023-2024 academic school year
+#### My teammates and I won all 5 Clark Univesity game jam in the 2023-2024 academic school year
 
 [Roof Access - 1st Place @ Clark IGDA Febuary 2024 Game Jam](https://team-edgecase.itch.io/roof-access)
 <img src="images/ra.png?raw=true"/>
