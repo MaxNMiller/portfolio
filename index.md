@@ -32,12 +32,16 @@
 <img src="images/abgs.gif?raw=true"/>
 
 ---
-Emergence in BOIDS simulation
+Emergence in Multi-Agent System
 <img src="images/agent.gif?raw=true"/>
 
 ---
-GPU Instanced snow displacement
+GPU Instanced Snow Displacement
 <img src="images/peng.gif?raw=true"/>
+
+---
+BOIDS Compute Shader
+<img src="images/fish.gif?raw=true"/>
 
 ---
 - [Project 3 Title](http://example.com/)
