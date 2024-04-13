@@ -25,7 +25,7 @@
 
 ---
 
-### Category Name 2
+### Graphics Programming
 
 ---
 [Audio-Based Glitch Shader - 1st Tech Art @ JoyArt 2024](https://devpost.com/software/audio-based-glitch-shader)
