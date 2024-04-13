@@ -32,7 +32,7 @@
 <img src="images/abgs.gif?raw=true"/>
 
 ---
-Emergence in BOID simulation
+Emergence in BOIDS simulation
 <img src="images/agent.gif?raw=true"/>
 
 ---
