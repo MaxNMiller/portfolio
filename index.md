@@ -2,7 +2,7 @@
 
 ---
 
-### Game  Jam Projects
+### Game Jam Projects
 
 [Roof Access - 1st Place @ Clark IGDA Febuary 2024 Game Jam](https://team-edgecase.itch.io/roof-access)
 <img src="images/ra.png?raw=true"/>
@@ -27,7 +27,11 @@
 
 ### Category Name 2
 
-- [Project 1 Title](http://example.com/)
+---
+[Audio-Based Glitch Shader - 1st Tech Art @ JoyArt 2024](https://devpost.com/software/audio-based-glitch-shader)
+<img src="images/abgs.gif?raw=true"/>
+
+---
 - [Project 2 Title](http://example.com/)
 - [Project 3 Title](http://example.com/)
 - [Project 4 Title](http://example.com/)
