@@ -32,7 +32,7 @@
 <img src="images/abgs.gif?raw=true"/>
 
 ---
-Non-Linear dynamical System
+Emergence in BOID simulation
 <img src="images/agent.gif?raw=true"/>
 
 ---
