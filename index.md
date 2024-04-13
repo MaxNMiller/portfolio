@@ -13,7 +13,11 @@
 
 ---
 [Menticide - 1st place @ Clark IGDA December 2023 Game Jam](https://team-edgecase.itch.io/menticide)
-<img src="images/ment.png?raw=true"/>
+<img src="images/Ment.png?raw=true"/>
+
+---
+[Tricks-n-Treats - 1st place @ Clark IGDA Halloween 2023 Game Jam](https://team-edgecase.itch.io/tricks-n-treats)
+<img src="images/tnt.png?raw=true"/>
 
 ---
 
