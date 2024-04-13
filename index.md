@@ -12,8 +12,8 @@
 <img src="images/etd.png?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Menticide - 1st place @ Clark IGDA December 2023 Game Jam](https://team-edgecase.itch.io/menticide)
+<img src="images/ment.png?raw=true"/>
 
 ---
 
