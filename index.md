@@ -44,9 +44,15 @@ BOIDS Compute Shader
 <img src="images/fish.gif?raw=true"/>
 
 ---
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+### Programming Skills:
+- Unity 
+- Blueprints (Unreal)
+- C#
+- C++
+- HLSL
+- Java
+- Python
+- Lua
 
 ---
 
