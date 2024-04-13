@@ -2,14 +2,14 @@
 
 ---
 
-### Category Name 1 
+### Game Projects
 
-[Roof Access - 1st Place @ Clark IGDA Febuary Game Jam](https://team-edgecase.itch.io/roof-access)
+[Roof Access - 1st Place @ Clark IGDA Febuary 2024 Game Jam](https://team-edgecase.itch.io/roof-access)
 <img src="images/ra.png?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Escape The Deep - 1st place @ Clark IGDA January 2024 Game Jam](https://team-edgecase.itch.io/escape-the-deep)
+<img src="images/etd.png?raw=true"/>
 
 ---
 [Project 3 Title](http://example.com/)
