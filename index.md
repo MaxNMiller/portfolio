@@ -36,6 +36,10 @@ Emergence in BOIDS simulation
 <img src="images/agent.gif?raw=true"/>
 
 ---
+GPU Instanced snow displacement
+<img src="images/agent.gif?raw=true"/>
+
+---
 - [Project 3 Title](http://example.com/)
 - [Project 4 Title](http://example.com/)
 - [Project 5 Title](http://example.com/)
