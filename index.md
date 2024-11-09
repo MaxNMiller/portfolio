@@ -1,5 +1,12 @@
 ## Portfolio
-
+### UNSENT
+[Slimeware Games Website](https://www.slimewaregames.com/)
+<img src="images/Unsent.png?raw=true"/>
+#### 
+• Led the technical development of a vertical slice that secured funding from a fellowship and the Worcester Small Business Association.
+• Collaborated with art, design, audio, and business teams to convey technical concepts and constraints.
+• Utilized agile concepts and managed jira tickets for the programming team
+• Developed major game systems, developer tools, and oversaw version control.
 ---
 
 ### Game Jam Projects
