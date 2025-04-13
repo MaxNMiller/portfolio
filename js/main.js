@@ -339,24 +339,4 @@ document.addEventListener('DOMContentLoaded', () => {
             hideAllProjectDetails();
         }
     });
-    
-    // Save editable content when it changes
-    const editableElements = document.querySelectorAll('[contenteditable="true"]');
-    editableElements.forEach(element => {
-        element.addEventListener('blur', () => {
-            // Here you would typically save the content to localStorage or a server
-            console.log('Content updated:', element.innerHTML);
-            
-            // For this example, we'll just save to localStorage
-            const elementId = element.closest('.project-detail').id;
-            localStorage.setItem(`content_${elementId}`, element.innerHTML);
-        });
-        
-        // Load saved content if it exists
-        const elementId = element.closest('.project-detail').id;
-        const savedContent = localStorage.getItem(`content_${elementId}`);
-        if (savedContent) {
-            element.innerHTML = savedContent;
-        }
-    });
 });
