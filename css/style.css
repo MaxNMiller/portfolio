@@ -180,13 +180,38 @@ h1 {
     visibility: visible;
 }
 
+.work-section {
+    width: 100%;
+    max-width: 1400px;
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-left: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(52, 152, 219, 1) 0%, rgba(52, 152, 219, 0) 100%);
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1400px;
     width: 100%;
-    padding: 2rem;
+    padding: 1rem 2rem;
 }
 
 .project-card {
@@ -373,4 +398,156 @@ h1 {
 .submit-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-detail-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    pointer-events: none;
+}
+
+.project-detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 20, 40, 0.98);
+    backdrop-filter: blur(15px);
+    transform: translateY(100%);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 200;
+    overflow-y: auto;
+    padding: 6rem 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.project-detail.active {
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.project-detail-content {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project-detail h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.project-media {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.project-media img:hover {
+    transform: scale(1.02);
+}
+
+.project-description {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.project-description:focus {
+    outline: 2px solid rgba(52, 152, 219, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.project-description p {
+    margin-bottom: 1.5rem;
+}
+
+.project-description ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.project-description li {
+    margin-bottom: 0.5rem;
+}
+
+.close-detail {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 210;
+}
+
+.close-detail::before,
+.close-detail::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+
+.close-detail::before {
+    transform: rotate(45deg);
+}
+
+.close-detail::after {
+    transform: rotate(-45deg);
+}
+
+.close-detail:hover::before,
+.close-detail:hover::after {
+    background: #3498db;
+}
+
+[contenteditable=true]:empty:before {
+    content: "Click to edit this text...";
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .project-detail {
+        padding: 5rem 1rem 2rem;
+    }
+    
+    .project-detail h2 {
+        font-size: 2.2rem;
+    }
+    
+    .project-description {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
 }

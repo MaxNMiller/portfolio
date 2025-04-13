@@ -35,36 +35,304 @@
         <div class="projects-panel" id="projectsPanel">
             <button class="close-panel"></button>
             <h2 class="panel-title">My Work</h2>
-            <div class="projects-grid">
-                <div class="project-card" data-project="1">
-                    <h3>Interactive Ocean Explorer</h3>
-                    <p>A WebGL-powered deep sea exploration experience with realistic underwater physics and creature behaviors.</p>
-                    <div class="tags">
-                        <span class="tag">WebGL</span>
-                        <span class="tag">Three.js</span>
-                        <span class="tag">Interactive</span>
+            
+            <!-- Game Programming Section -->
+            <div class="work-section">
+                <h3 class="section-title">Game Programming</h3>
+                <div class="projects-grid">
+                    <div class="project-card" data-project="game1">
+                        <h3>Unsent</h3>
+                        <p>Learn about my time as co-founder and lead programmer of slimeware Games</p>
+                        <div class="tags">
+                            <span class="tag">Unreal Engine</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">UE Blueprint</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="game2">
+                        <h3>CIE Reigns</h3>
+                        <p>Learn about my time leading an interactive software development project as an intern at CIE</p>
+                        <div class="tags">
+                            <span class="tag">Unity Engine</span>
+                            <span class="tag">C#</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="game3">
+                        <h3>Frost Rod</h3>
+                        <p>A game jam game where you control a hot-rod snowmobile</p>
+                        <div class="tags">
+                            <span class="tag">Unity Engine</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">Game Jam</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card" data-project="2">
-                    <h3>Wave Analytics Platform</h3>
-                    <p>Real-time data visualization platform for monitoring ocean wave patterns and marine conditions.</p>
-                    <div class="tags">
-                        <span class="tag">Data Viz</span>
-                        <span class="tag">React</span>
-                        <span class="tag">D3.js</span>
+            </div>
+            
+            <!-- Shader Programming Section -->
+            <div class="work-section">
+                <h3 class="section-title">Shader Programming</h3>
+                <div class="projects-grid">
+                    <div class="project-card" data-project="shader1">
+                        <h3>Ocean Simulation</h3>
+                        <p>Realistic ocean water simulation with dynamic waves, foam, and light refraction effects</p>
+                        <div class="tags">
+                            <span class="tag">GLSL</span>
+                            <span class="tag">WebGL</span>
+                            <span class="tag">Three.js</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="shader2">
+                        <h3>Procedural Terrain</h3>
+                        <p>GPU-accelerated procedural terrain generation with dynamic texturing and erosion simulation</p>
+                        <div class="tags">
+                            <span class="tag">HLSL</span>
+                            <span class="tag">Unity</span>
+                            <span class="tag">Compute Shaders</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="shader3">
+                        <h3>Particle Systems</h3>
+                        <p>High-performance GPU particle systems for simulating natural phenomena like fire, smoke, and fluid</p>
+                        <div class="tags">
+                            <span class="tag">CUDA</span>
+                            <span class="tag">OpenGL</span>
+                            <span class="tag">C++</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card" data-project="3">
-                    <h3>Marine Life Tracker</h3>
-                    <p>Mobile application for tracking and identifying marine species with AI-powered recognition.</p>
-                    <div class="tags">
-                        <span class="tag">Mobile</span>
-                        <span class="tag">React Native</span>
-                        <span class="tag">AI</span>
+            </div>
+            
+            <!-- Software Engineering Section -->
+            <div class="work-section">
+                <h3 class="section-title">Software Engineering</h3>
+                <div class="projects-grid">
+                    <div class="project-card" data-project="software1">
+                        <h3>Marine Life Tracker</h3>
+                        <p>Mobile application for tracking and identifying marine species with AI-powered recognition</p>
+                        <div class="tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">React Native</span>
+                            <span class="tag">AI</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="software2">
+                        <h3>Data Visualization Platform</h3>
+                        <p>Interactive dashboard for visualizing complex datasets with real-time filtering and analysis</p>
+                        <div class="tags">
+                            <span class="tag">D3.js</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="software3">
+                        <h3>Cloud Infrastructure</h3>
+                        <p>Scalable cloud infrastructure with automated deployment pipelines and monitoring systems</p>
+                        <div class="tags">
+                            <span class="tag">AWS</span>
+                            <span class="tag">Terraform</span>
+                            <span class="tag">Docker</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Project Detail Pages -->
+        <div class="project-detail-container">
+            <!-- Game Projects -->
+            <div class="project-detail" id="game1-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>Unsent</h2>
+                    <div class="project-media">
+                        <img src="img/projects/unsent.jpg" alt="Unsent Game Screenshot">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>As co-founder and lead programmer at slimeware Games, I led the development of Unsent, a narrative-driven adventure game built in Unreal Engine.</p>
+                        <p>My responsibilities included:</p>
+                        <ul>
+                            <li>Implementing core gameplay mechanics using C++ and Unreal Blueprint</li>
+                            <li>Designing and optimizing the dialogue system</li>
+                            <li>Collaborating with artists and writers to bring the story to life</li>
+                            <li>Managing a small team of developers</li>
+                        </ul>
+                        <p>The game received positive reviews for its innovative storytelling approach and polished gameplay experience.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-detail" id="game2-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>CIE Reigns</h2>
+                    <div class="project-media">
+                        <img src="img/projects/cie-reigns.jpg" alt="CIE Reigns Screenshot">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>During my internship at CIE, I led the development of CIE Reigns, an interactive simulation game inspired by the popular title "Reigns".</p>
+                        <p>Key achievements:</p>
+                        <ul>
+                            <li>Developed the core game mechanics using Unity and C#</li>
+                            <li>Implemented a dynamic event system with branching narratives</li>
+                            <li>Created an intuitive card-swiping interface</li>
+                            <li>Collaborated with the design team to create engaging scenarios</li>
+                        </ul>
+                        <p>The project was used for internal training and later adapted for public educational purposes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-detail" id="game3-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>Pixel Adventure</h2>
+                    <div class="project-media">
+                        <img src="img/projects/pixel-adventure.jpg" alt="Pixel Adventure Screenshot">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>Pixel Adventure is a retro-style 2D platformer featuring procedurally generated levels and pixel art graphics.</p>
+                        <p>Technical highlights:</p>
+                        <ul>
+                            <li>Developed using the Godot Engine and GDScript</li>
+                            <li>Implemented procedural level generation algorithms</li>
+                            <li>Created pixel art assets and animations</li>
+                            <li>Designed challenging gameplay mechanics</li>
+                        </ul>
+                        <p>This personal project allowed me to explore procedural content generation while paying homage to classic platformers.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Shader Projects -->
+            <div class="project-detail" id="shader1-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>Ocean Simulation</h2>
+                    <div class="project-media">
+                        <img src="img/projects/ocean-simulation.jpg" alt="Ocean Simulation Screenshot">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>A realistic ocean water simulation with dynamic waves, foam, and light refraction effects built with WebGL and Three.js.</p>
+                        <p>Technical features:</p>
+                        <ul>
+                            <li>Implemented Gerstner wave algorithms in GLSL</li>
+                            <li>Created dynamic foam generation based on wave height and velocity</li>
+                            <li>Simulated realistic light refraction and caustics</li>
+                            <li>Optimized for real-time performance in web browsers</li>
+                        </ul>
+                        <p>This project demonstrates advanced shader programming techniques to create convincing water effects.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-detail" id="shader2-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>Procedural Terrain</h2>
+                    <div class="project-media">
+                        <img src="img/projects/procedural-terrain.jpg" alt="Procedural Terrain Screenshot">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>GPU-accelerated procedural terrain generation with dynamic texturing and erosion simulation using HLSL and Unity.</p>
+                        <p>Key components:</p>
+                        <ul>
+                            <li>Implemented multiple noise algorithms for terrain height generation</li>
+                            <li>Created hydraulic and thermal erosion simulations</li>
+                            <li>Developed dynamic texture blending based on slope, height, and curvature</li>
+                            <li>Optimized using compute shaders for real-time editing</li>
+                        </ul>
+                        <p>This system allows for the creation of vast, realistic landscapes that can be edited in real-time.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-detail" id="shader3-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>Particle Systems</h2>
+                    <div class="project-media">
+                        <img src="img/projects/particle-systems.jpg" alt="Particle Systems Screenshot">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>High-performance GPU particle systems for simulating natural phenomena like fire, smoke, and fluid dynamics.</p>
+                        <p>Technical achievements:</p>
+                        <ul>
+                            <li>Implemented GPU-based particle simulation using CUDA</li>
+                            <li>Created realistic fluid dynamics using Smoothed Particle Hydrodynamics (SPH)</li>
+                            <li>Developed smoke and fire simulations with temperature and buoyancy</li>
+                            <li>Optimized for real-time performance with millions of particles</li>
+                        </ul>
+                        <p>This project demonstrates advanced techniques in computational physics and GPU programming.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Software Projects -->
+            <div class="project-detail" id="software1-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>Marine Life Tracker</h2>
+                    <div class="project-media">
+                        <img src="img/projects/marine-tracker.jpg" alt="Marine Life Tracker Screenshot">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>A mobile application for tracking and identifying marine species with AI-powered recognition.</p>
+                        <p>Key features:</p>
+                        <ul>
+                            <li>Developed using React Native for cross-platform compatibility</li>
+                            <li>Implemented machine learning models for species identification</li>
+                            <li>Created a geospatial database for tracking sightings</li>
+                            <li>Designed an intuitive user interface for field researchers</li>
+                        </ul>
+                        <p>This application is currently being used by marine biologists for research and conservation efforts.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-detail" id="software2-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>Data Visualization Platform</h2>
+                    <div class="project-media">
+                        <img src="img/projects/data-viz.jpg" alt="Data Visualization Platform Screenshot">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>An interactive dashboard for visualizing complex datasets with real-time filtering and analysis capabilities.</p>
+                        <p>Technical features:</p>
+                        <ul>
+                            <li>Built with React and D3.js for responsive, interactive visualizations</li>
+                            <li>Implemented real-time data processing with Node.js</li>
+                            <li>Created custom visualization components for specific data types</li>
+                            <li>Designed an intuitive interface for data exploration</li>
+                        </ul>
+                        <p>This platform enables users to gain insights from complex datasets through intuitive visual representations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-detail" id="software3-detail">
+                <button class="close-detail"></button>
+                <div class="project-detail-content">
+                    <h2>Cloud Infrastructure</h2>
+                    <div class="project-media">
+                        <img src="img/projects/cloud-infra.jpg" alt="Cloud Infrastructure Diagram">
+                    </div>
+                    <div class="project-description" contenteditable="true">
+                        <p>Scalable cloud infrastructure with automated deployment pipelines and monitoring systems.</p>
+                        <p>Key components:</p>
+                        <ul>
+                            <li>Designed and implemented infrastructure as code using Terraform</li>
+                            <li>Created containerized microservices with Docker</li>
+                            <li>Set up CI/CD pipelines for automated testing and deployment</li>
+                            <li>Implemented comprehensive monitoring and alerting systems</li>
+                        </ul>
+                        <p>This infrastructure supports high-traffic applications with automatic scaling and self-healing capabilities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="about-panel" id="aboutPanel">
             <button class="close-panel"></button>
             <h2 class="panel-title">About Me</h2>
