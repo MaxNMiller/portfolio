@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Max Miller - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <svg style="position: absolute; width: 0; height: 0;">
+        <defs>
+            <filter id="underwater" x="-50%" y="-50%" width="200%" height="200%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.005" numOctaves="5" result="noise" seed="1"/>
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="30"/>
+                <feGaussianBlur stdDeviation="3"/>
+                <feColorMatrix type="matrix" values="
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 0.8 0
+                "/>
+            </filter>
+        </defs>
+    </svg>
+    <div class="underwater-bg">
+        <div class="noise"></div>
+    </div>
+    <canvas id="fishCanvas"></canvas>
+    <div class="content">
+        <h1>Hi, I'm Max Miller</h1>
+        <div class="nav-buttons">
+            <button class="nav-button">Work</button>
+            <button class="nav-button">About</button>
+            <button class="nav-button">Contact</button>
+        </div>
+        <div class="projects-panel" id="projectsPanel">
+            <button class="close-panel"></button>
+            <h2 class="panel-title">My Work</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="1">
+                    <h3>Interactive Ocean Explorer</h3>
+                    <p>A WebGL-powered deep sea exploration experience with realistic underwater physics and creature behaviors.</p>
+                    <div class="tags">
+                        <span class="tag">WebGL</span>
+                        <span class="tag">Three.js</span>
+                        <span class="tag">Interactive</span>
+                    </div>
+                </div>
+                <div class="project-card" data-project="2">
+                    <h3>Wave Analytics Platform</h3>
+                    <p>Real-time data visualization platform for monitoring ocean wave patterns and marine conditions.</p>
+                    <div class="tags">
+                        <span class="tag">Data Viz</span>
+                        <span class="tag">React</span>
+                        <span class="tag">D3.js</span>
+                    </div>
+                </div>
+                <div class="project-card" data-project="3">
+                    <h3>Marine Life Tracker</h3>
+                    <p>Mobile application for tracking and identifying marine species with AI-powered recognition.</p>
+                    <div class="tags">
+                        <span class="tag">Mobile</span>
+                        <span class="tag">React Native</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-panel" id="aboutPanel">
+            <button class="close-panel"></button>
+            <h2 class="panel-title">About Me</h2>
+            <div class="about-content">
+                <p>Creative developer focused on interactive experiences and digital innovation. Specializing in WebGL, Three.js, and creative coding.</p>
+                <p>With over 5 years of experience crafting digital experiences, I combine technical expertise with artistic vision to create memorable interactive projects.</p>
+            </div>
+        </div>
+        <div class="contact-panel" id="contactPanel">
+            <button class="close-panel"></button>
+            <h2 class="panel-title">Get In Touch</h2>
+            <div class="contact-content">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <p>Email: <a href="mailto:max@example.com">max@example.com</a></p>
+                    <p>Twitter: @maxmiller</p>
+                    <p>LinkedIn: /in/maxmiller</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/boids.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
