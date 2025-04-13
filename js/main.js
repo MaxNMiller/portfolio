@@ -307,6 +307,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function showProjectDetail(projectId) {
         const detailElement = document.getElementById(`${projectId}-detail`);
         if (detailElement) {
+            // Check if we need to load markdown content
+            const markdownElement = detailElement.querySelector('.markdown');
+            if (markdownElement) {
+                // Load markdown content from file
+                fetch(`content/projects/${projectId}.md`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .then(markdown => {
+                        // Render markdown to HTML
+                        markdownElement.innerHTML = marked.parse(markdown);
+                    })
+                    .catch(error => {
+                        console.error('Error loading markdown:', error);
+                        // If there's an error, use the fallback content already in the HTML
+                    });
+            }
+            
             detailElement.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling behind the detail page
         }
