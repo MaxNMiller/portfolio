@@ -2,11 +2,11 @@
 
 A shader that procedurally distorts meshes based on audio volume and frequency data.
 
-## Technical details:
+## Technical features:
 
-- Created using HLSL in Unity's shader graph system
-- Implemented real-time audio analysis to drive visual effects
-- Developed custom vertex displacement algorithms for various glitch effects
-- Optimized for performance in VR applications
+- Developed custom HLSL shaders that respond to real-time audio input
+- Created a system to analyze audio frequency bands and translate them to visual effects
+- Implemented vertex displacement techniques for organic distortion effects
+- Optimized for real-time performance in Unity
 
-The shader creates dynamic visual distortions that react to music and sound effects, enhancing immersion in interactive experiences.
+This project bridges audio and visual domains, creating dynamic and responsive visual experiences driven by sound.

@@ -303,29 +303,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectDetails = document.querySelectorAll('.project-detail');
     const closeDetailButtons = document.querySelectorAll('.close-detail');
     
+    // Function to load and render markdown content
+    async function loadMarkdownContent(element) {
+        const markdownFile = element.getAttribute('data-markdown-file');
+        if (!markdownFile) return;
+        
+        try {
+            const response = await fetch(markdownFile);
+            if (!response.ok) {
+                throw new Error(`Failed to load markdown file: ${markdownFile}`);
+            }
+            
+            const markdownText = await response.text();
+            // Use the marked library to convert markdown to HTML
+            element.innerHTML = marked.parse(markdownText);
+        } catch (error) {
+            console.error('Error loading markdown:', error);
+            element.innerHTML = `<p>Error loading content. Please try again later.</p>`;
+        }
+    }
+    
     // Function to show project detail
     function showProjectDetail(projectId) {
         const detailElement = document.getElementById(`${projectId}-detail`);
         if (detailElement) {
-            // Check if we need to load markdown content
-            const markdownElement = detailElement.querySelector('.markdown');
-            if (markdownElement) {
-                // Load markdown content from file
-                fetch(`content/projects/${projectId}.md`)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.text();
-                    })
-                    .then(markdown => {
-                        // Render markdown to HTML
-                        markdownElement.innerHTML = marked.parse(markdown);
-                    })
-                    .catch(error => {
-                        console.error('Error loading markdown:', error);
-                        // If there's an error, use the fallback content already in the HTML
-                    });
+            // Load markdown content if it hasn't been loaded yet
+            const descriptionElement = detailElement.querySelector('.project-description');
+            if (descriptionElement && descriptionElement.innerHTML.trim() === '<!-- Markdown content will be loaded here -->') {
+                loadMarkdownContent(descriptionElement);
             }
             
             detailElement.classList.add('active');
