@@ -21,18 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create enhanced fish geometry
     const fishGeometry = createAnimatedFishGeometry();
     
-    // Create materials with improved colors and effects
-    const fishMaterials = [
-        createFishMaterial(0x3498db),
-        createFishMaterial(0x2ecc71),
-        createFishMaterial(0xe74c3c),
-        createFishMaterial(0xf1c40f),
-        createFishMaterial(0x9b59b6),
-        createFishMaterial(0x1abc9c),
-        createFishMaterial(0xe67e22)
-    ];
+    // Create shimmering fish materials in shades of grey and white
+    const fishMaterials = [];
+    for (let i = 0; i < 10; i++) {
+        fishMaterials.push(createShimmeringFishMaterial());
+    }
     
-    // Add enhanced lighting
+    // Add enhanced lighting for better shimmer effect
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
     
@@ -41,12 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
     
-    // Add point lights for dramatic effect
-    const pointLight1 = new THREE.PointLight(0x3498db, 0.5, 50);
+    // Add point lights for dramatic effect with cooler colors
+    const pointLight1 = new THREE.PointLight(0x8ecdf8, 0.6, 80);
     pointLight1.position.set(20, 20, 20);
     scene.add(pointLight1);
     
-    const pointLight2 = new THREE.PointLight(0xe74c3c, 0.5, 50);
+    const pointLight2 = new THREE.PointLight(0xc4f0ff, 0.6, 80);
     pointLight2.position.set(-20, -20, 20);
     scene.add(pointLight2);
     
@@ -137,6 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 meshes[i].rotation.z = Math.sin(currentTime * 0.01 * speed + i * 0.1) * 0.2 * speed;
             }
             
+            // Update material shimmer effect
+            updateMaterialShimmer(meshes[i].material, currentTime);
+            
             // Subtle size pulsing for more life-like appearance
             const pulseFactor = 1 + Math.sin(currentTime * 0.003 + i * 0.5) * 0.05;
             meshes[i].scale.set(
@@ -179,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const boid = new Boid(x, y, z);
         boids.push(boid);
         
-        // Create mesh with improved materials
+        // Create mesh with shimmering materials
         const material = fishMaterials[Math.floor(Math.random() * fishMaterials.length)];
         const mesh = new THREE.Mesh(fishGeometry, material);
         

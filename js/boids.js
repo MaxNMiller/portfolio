@@ -487,22 +487,96 @@ function createAnimatedFishGeometry() {
 }
 
 // Create fish material with enhanced visual effects
-function createFishMaterial(color, wireframe = true) {
+function createFishMaterial(color = null, wireframe = false) {
+    // Generate a shade of grey to white
+    const greyShade = Math.random() * 0.5 + 0.5; // Value between 0.5 and 1.0
+    const baseColor = new THREE.Color(greyShade, greyShade, greyShade);
+    
+    // Add slight color tint if specified
+    if (color) {
+        const tintColor = new THREE.Color(color);
+        baseColor.lerp(tintColor, 0.15); // Subtle tint
+    }
+    
     if (wireframe) {
         return new THREE.MeshBasicMaterial({ 
-            color: color, 
+            color: baseColor, 
             wireframe: true,
             transparent: true,
-            opacity: 0.8 + Math.random() * 0.2
+            opacity: 0.7 + Math.random() * 0.3
         });
     } else {
-        return new THREE.MeshPhongMaterial({
-            color: color,
-            specular: 0xffffff,
-            shininess: 100,
+        // Create shimmering, glowing material
+        const material = new THREE.MeshPhysicalMaterial({
+            color: baseColor,
+            metalness: 0.1 + Math.random() * 0.2,
+            roughness: 0.2 + Math.random() * 0.3,
+            reflectivity: 0.8,
+            clearcoat: 0.5 + Math.random() * 0.5,
+            clearcoatRoughness: 0.1,
             transparent: true,
-            opacity: 0.8 + Math.random() * 0.2,
-            side: THREE.DoubleSide
+            opacity: 0.7 + Math.random() * 0.3,
+            side: THREE.DoubleSide,
+            emissive: baseColor,
+            emissiveIntensity: 0.2 + Math.random() * 0.3
         });
+        
+        return material;
     }
+}
+
+// Create a shimmering fish material that changes over time
+function createShimmeringFishMaterial() {
+    // Base silvery-white color
+    const baseColor = new THREE.Color(0.9, 0.9, 0.95);
+    
+    // Create the material with shimmer properties
+    const material = new THREE.MeshPhysicalMaterial({
+        color: baseColor,
+        metalness: 0.8,
+        roughness: 0.1,
+        reflectivity: 1.0,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.1,
+        transparent: true,
+        opacity: 0.8,
+        side: THREE.DoubleSide,
+        emissive: new THREE.Color(0.3, 0.3, 0.5),
+        emissiveIntensity: 0.3
+    });
+    
+    // Add custom property for animation
+    material.userData = {
+        baseColor: baseColor.clone(),
+        shimmerSpeed: 0.001 + Math.random() * 0.002,
+        shimmerIntensity: 0.1 + Math.random() * 0.2,
+        uniqueOffset: Math.random() * 10
+    };
+    
+    return material;
+}
+
+// Update material shimmer effect
+function updateMaterialShimmer(material, time) {
+    if (!material.userData || !material.userData.baseColor) return;
+    
+    const { baseColor, shimmerSpeed, shimmerIntensity, uniqueOffset } = material.userData;
+    
+    // Create shimmer effect with sine waves at different frequencies
+    const shimmerValue = Math.sin(time * shimmerSpeed + uniqueOffset) * shimmerIntensity;
+    const shimmerValue2 = Math.sin(time * shimmerSpeed * 1.5 + uniqueOffset * 2.7) * shimmerIntensity * 0.7;
+    
+    // Create a new color based on the base color with shimmer effect
+    const shimmerColor = baseColor.clone();
+    shimmerColor.r += shimmerValue;
+    shimmerColor.g += shimmerValue;
+    shimmerColor.b += shimmerValue2;
+    
+    // Update material colors
+    material.color.copy(shimmerColor);
+    material.emissive.copy(shimmerColor);
+    material.emissiveIntensity = 0.2 + Math.abs(shimmerValue) * 0.5;
+    
+    // Subtle changes to other properties for more dynamic effect
+    material.clearcoat = 0.8 + Math.abs(shimmerValue) * 0.4;
 }
