@@ -141,6 +141,33 @@ h1 {
     transform: scale(1.05);
 }
 
+.resume-button {
+    background: rgba(52, 152, 219, 0.2);
+    border: 2px solid #3498db;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-button:hover {
+    background: rgba(52, 152, 219, 0.3);
+    transform: scale(1.05);
+}
+
+.resume-button::after {
+    content: '↓';
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.resume-button:hover::after {
+    transform: translateY(3px);
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -521,11 +548,14 @@ h1 {
     border-radius: 8px;
     overflow-x: auto;
     margin: 1.5rem 0;
+    text-align: left;
 }
 
 .project-description pre code {
     background: transparent;
     padding: 0;
+    text-align: left;
+    display: block;
 }
 
 .close-detail {
@@ -938,11 +968,14 @@ h1 {
     border-radius: 8px;
     overflow-x: auto;
     margin: 1.5rem 0;
+    text-align: left;
 }
 
 .project-description pre code {
     background: transparent;
     padding: 0;
+    text-align: left;
+    display: block;
 }
 
 .close-detail {
@@ -1016,5 +1049,122 @@ h1 {
     
     .project-card {
         padding: 1.8rem;
+    }
+}
+
+/* Social Icons Styling */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 120px;
+    height: 120px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon:hover::before {
+    opacity: 1;
+}
+
+.social-icon svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.8rem;
+    transition: all 0.4s ease;
+    fill: #fff;
+}
+
+.social-icon span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.4s ease;
+}
+
+.social-icon:hover svg {
+    transform: scale(1.2);
+}
+
+.social-icon.linkedin {
+    border-color: rgba(10, 102, 194, 0.4);
+}
+
+.social-icon.linkedin:hover {
+    background: rgba(10, 102, 194, 0.2);
+    border-color: rgba(10, 102, 194, 0.6);
+}
+
+.social-icon.linkedin:hover svg {
+    fill: #0A66C2;
+}
+
+.social-icon.github {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.social-icon.github:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.social-icon.github:hover svg {
+    fill: #fff;
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .social-icon {
+        width: 100%;
+        max-width: 200px;
+        height: 80px;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 0 1.5rem;
+    }
+    
+    .social-icon svg {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 0;
+        margin-right: 1rem;
     }
 }

@@ -260,6 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add event listeners to navigation buttons
     navButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
+            // Skip the resume button which is an anchor tag, not a button
+            if (button.classList.contains('resume-button')) return;
+            
             if (index === 0) showPanel(projectsPanel);
             else if (index === 1) showPanel(aboutPanel);
             else if (index === 2) showPanel(contactPanel);
