@@ -28,27 +28,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Enhanced lighting for better visibility and glow effect
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
     
     // Add directional light with shadows
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
     
     // Add point lights for dramatic effect with brighter colors
-    const pointLight1 = new THREE.PointLight(0xffffff, 1.0, 100);
+    const pointLight1 = new THREE.PointLight(0xffffff, 1.2, 120);
     pointLight1.position.set(20, 20, 20);
     scene.add(pointLight1);
     
-    const pointLight2 = new THREE.PointLight(0xffffff, 1.0, 100);
+    const pointLight2 = new THREE.PointLight(0xffffff, 1.2, 120);
     pointLight2.position.set(-20, -20, 20);
     scene.add(pointLight2);
     
     // Add a subtle blue backlight for contrast
-    const backLight = new THREE.PointLight(0x4d88ff, 0.8, 150);
+    const backLight = new THREE.PointLight(0x4d88ff, 1.0, 150);
     backLight.position.set(0, 0, -50);
     scene.add(backLight);
+    
+    // Add a bright rim light to create silhouette effect
+    const rimLight = new THREE.PointLight(0xffffff, 1.0, 100);
+    rimLight.position.set(0, 50, -30);
+    scene.add(rimLight);
     
     // Track mouse position for attraction with improved interaction
     const mouse = new THREE.Vector3();
@@ -190,6 +195,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const size = 0.5 + Math.random() * 0.5;
         boid.size = size;
         mesh.scale.set(size, size, size);
+        
+        // Add outline effect for better visibility
+        const outlineMaterial = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            side: THREE.BackSide,
+            transparent: true,
+            opacity: 0.3
+        });
+        
+        const outlineMesh = new THREE.Mesh(fishGeometry, outlineMaterial);
+        outlineMesh.scale.set(size * 1.1, size * 1.1, size * 1.1); // Slightly larger than the original
+        mesh.add(outlineMesh); // Add as a child to follow the parent's transformations
         
         scene.add(mesh);
         meshes.push(mesh);

@@ -542,14 +542,14 @@ function createShimmeringFishMaterial() {
         opacity: 0.9,
         side: THREE.DoubleSide,
         emissive: new THREE.Color(1.0, 1.0, 1.0),
-        emissiveIntensity: 0.8
+        emissiveIntensity: 1.2  // Increased from 0.8 for more glow
     });
     
     // Add custom property for animation
     material.userData = {
         baseColor: baseColor.clone(),
         shimmerSpeed: 0.001 + Math.random() * 0.002,
-        shimmerIntensity: 0.2 + Math.random() * 0.3,
+        shimmerIntensity: 0.3 + Math.random() * 0.4,  // Increased intensity
         uniqueOffset: Math.random() * 10
     };
     
@@ -577,11 +577,11 @@ function updateMaterialShimmer(material, time) {
     material.emissive.copy(shimmerColor);
     
     // Stronger emissive intensity for more visible glow
-    material.emissiveIntensity = 0.6 + Math.abs(shimmerValue) * 0.8;
+    material.emissiveIntensity = 0.8 + Math.abs(shimmerValue) * 1.0;
     
     // Subtle changes to other properties for more dynamic effect
     material.clearcoat = 0.8 + Math.abs(shimmerValue) * 0.4;
     
     // Pulsating opacity for ethereal glow effect
-    material.opacity = 0.7 + Math.abs(shimmerValue) * 0.3;
+    material.opacity = 0.8 + Math.abs(shimmerValue) * 0.2;
 }
