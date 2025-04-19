@@ -432,5 +432,23 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="js/boids.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Info button for boids explanation -->
+    <div class="info-button-container">
+        <button class="info-button" id="infoButton" aria-label="What's with the background?">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+            <span>What's with the background?</span>
+        </button>
+        <div class="info-popup" id="infoPopup">
+            <div class="info-popup-content">
+                <h3>Interactive Fish Simulation</h3>
+                <p>The fish in the background are using a <strong>boids algorithm</strong> — an artificial life program that simulates the flocking behavior of fish.</p>
+                <p>Try clicking or tapping rapidly on the screen to attract the fish to your cursor!</p>
+                <button class="info-close-button" id="infoCloseButton">Got it</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
