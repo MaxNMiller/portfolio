@@ -27,23 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
         fishMaterials.push(createShimmeringFishMaterial());
     }
     
-    // Add enhanced lighting for better shimmer effect
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+    // Enhanced lighting for better visibility and glow effect
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
     
     // Add directional light with shadows
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
     directionalLight.position.set(1, 1, 1);
     scene.add(directionalLight);
     
-    // Add point lights for dramatic effect with cooler colors
-    const pointLight1 = new THREE.PointLight(0x8ecdf8, 0.6, 80);
+    // Add point lights for dramatic effect with brighter colors
+    const pointLight1 = new THREE.PointLight(0xffffff, 1.0, 100);
     pointLight1.position.set(20, 20, 20);
     scene.add(pointLight1);
     
-    const pointLight2 = new THREE.PointLight(0xc4f0ff, 0.6, 80);
+    const pointLight2 = new THREE.PointLight(0xffffff, 1.0, 100);
     pointLight2.position.set(-20, -20, 20);
     scene.add(pointLight2);
+    
+    // Add a subtle blue backlight for contrast
+    const backLight = new THREE.PointLight(0x4d88ff, 0.8, 150);
+    backLight.position.set(0, 0, -50);
+    scene.add(backLight);
     
     // Track mouse position for attraction with improved interaction
     const mouse = new THREE.Vector3();
@@ -273,6 +278,42 @@ document.addEventListener('DOMContentLoaded', () => {
     closePanelButtons.forEach(button => {
         button.addEventListener('click', hideAllPanels);
     });
+    
+    // Info button and popup functionality
+    const infoButton = document.getElementById('infoButton');
+    const infoPopup = document.getElementById('infoPopup');
+    const infoCloseButton = document.getElementById('infoCloseButton');
+    
+    if (infoButton && infoPopup) {
+        // Show popup when info button is clicked
+        infoButton.addEventListener('click', () => {
+            infoPopup.classList.add('active');
+        });
+        
+        // Hide popup when close button is clicked
+        if (infoCloseButton) {
+            infoCloseButton.addEventListener('click', () => {
+                infoPopup.classList.remove('active');
+            });
+        }
+        
+        // Hide popup when clicking outside
+        document.addEventListener('click', (event) => {
+            if (infoPopup.classList.contains('active') && 
+                !infoPopup.contains(event.target) && 
+                event.target !== infoButton && 
+                !infoButton.contains(event.target)) {
+                infoPopup.classList.remove('active');
+            }
+        });
+        
+        // Add escape key to close popup
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && infoPopup.classList.contains('active')) {
+                infoPopup.classList.remove('active');
+            }
+        });
+    }
     
     // Handle form submission
     const contactForm = document.getElementById('contactForm');

@@ -527,29 +527,29 @@ function createFishMaterial(color = null, wireframe = false) {
 
 // Create a shimmering fish material that changes over time
 function createShimmeringFishMaterial() {
-    // Base silvery-white color
-    const baseColor = new THREE.Color(0.9, 0.9, 0.95);
+    // Pure white color for high visibility
+    const baseColor = new THREE.Color(1.0, 1.0, 1.0);
     
-    // Create the material with shimmer properties
+    // Create the material with enhanced glow properties
     const material = new THREE.MeshPhysicalMaterial({
         color: baseColor,
-        metalness: 0.8,
-        roughness: 0.1,
+        metalness: 0.9,
+        roughness: 0.05,
         reflectivity: 1.0,
         clearcoat: 1.0,
-        clearcoatRoughness: 0.1,
+        clearcoatRoughness: 0.05,
         transparent: true,
-        opacity: 0.8,
+        opacity: 0.9,
         side: THREE.DoubleSide,
-        emissive: new THREE.Color(0.3, 0.3, 0.5),
-        emissiveIntensity: 0.3
+        emissive: new THREE.Color(1.0, 1.0, 1.0),
+        emissiveIntensity: 0.8
     });
     
     // Add custom property for animation
     material.userData = {
         baseColor: baseColor.clone(),
         shimmerSpeed: 0.001 + Math.random() * 0.002,
-        shimmerIntensity: 0.1 + Math.random() * 0.2,
+        shimmerIntensity: 0.2 + Math.random() * 0.3,
         uniqueOffset: Math.random() * 10
     };
     
@@ -562,7 +562,7 @@ function updateMaterialShimmer(material, time) {
     
     const { baseColor, shimmerSpeed, shimmerIntensity, uniqueOffset } = material.userData;
     
-    // Create shimmer effect with sine waves at different frequencies
+    // Create enhanced shimmer effect with sine waves at different frequencies
     const shimmerValue = Math.sin(time * shimmerSpeed + uniqueOffset) * shimmerIntensity;
     const shimmerValue2 = Math.sin(time * shimmerSpeed * 1.5 + uniqueOffset * 2.7) * shimmerIntensity * 0.7;
     
@@ -572,11 +572,16 @@ function updateMaterialShimmer(material, time) {
     shimmerColor.g += shimmerValue;
     shimmerColor.b += shimmerValue2;
     
-    // Update material colors
+    // Update material colors with enhanced glow
     material.color.copy(shimmerColor);
     material.emissive.copy(shimmerColor);
-    material.emissiveIntensity = 0.2 + Math.abs(shimmerValue) * 0.5;
+    
+    // Stronger emissive intensity for more visible glow
+    material.emissiveIntensity = 0.6 + Math.abs(shimmerValue) * 0.8;
     
     // Subtle changes to other properties for more dynamic effect
     material.clearcoat = 0.8 + Math.abs(shimmerValue) * 0.4;
+    
+    // Pulsating opacity for ethereal glow effect
+    material.opacity = 0.7 + Math.abs(shimmerValue) * 0.3;
 }
